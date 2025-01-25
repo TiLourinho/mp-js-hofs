@@ -4,7 +4,7 @@ const foodGallery = document.querySelector("#food-gallery");
 const foodFilterSelect = document.querySelector("#food-filter");
 
 foodFilterSelect.addEventListener("click", () => {
-  cleanGallery();
+  clearGallery();
 
   switch (foodFilterSelect.value) {
     case "all":
@@ -50,7 +50,7 @@ function createFoodItem(item) {
   foodGallery.appendChild(foodItem);
 }
 
-function cleanGallery() {
+function clearGallery() {
   const allFoodItems = document.querySelectorAll(".food-item");
 
   allFoodItems.forEach((element) => element.remove());
