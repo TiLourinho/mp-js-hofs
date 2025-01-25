@@ -16,7 +16,7 @@ allFoodItems.forEach((item) => {
     createSelectedItem(item);
 
     result.push(Number(foodCalories));
-    totalCalories.innerText = result.reduce((acc, curr) => acc + curr, 0);
+    totalCalories.innerText = updateTotalCalories();
 
     const selectedButtons = selectedFoods.childNodes;
 
@@ -32,7 +32,7 @@ allFoodItems.forEach((item) => {
         }
 
         element.remove();
-        totalCalories.innerText = result.reduce((acc, curr) => acc + curr, 0);
+        totalCalories.innerText = updateTotalCalories();
       });
     });
   });
@@ -82,4 +82,8 @@ function createSelectedItem(item) {
   selectedFood.appendChild(selectedFoodCalories);
   selectedFood.appendChild(selectedFoodButton);
   selectedFoods.appendChild(selectedFood);
+}
+
+function updateTotalCalories() {
+  return result.reduce((acc, curr) => acc + curr, 0);
 }
